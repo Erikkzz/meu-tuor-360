@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Seu Projeto</title>
+</head>
+<body>
+  <h1>O Seu Tour Virtual</h1>
+  <div id="lista"></div>
+
+  <script>
+    fetch('data/tours.json')
+      .then(res => res.json())
+      .then(tours => {
+        const div = document.getElementById('lista');
+        tours.forEach(tour => {
+          const link = document.createElement('a');
+          link.href = `tour.html?id=${tour.id}`;
+          link.textContent = tour.titulo;
+          link.style.display = 'block';
+          div.appendChild(link);
+        });
+      });
+  </script>
+</body>
+</html>

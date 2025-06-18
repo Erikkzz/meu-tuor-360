@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tour 360</title>
+  <script src="pannellum/build/pannellum.js"></script>
+  <link rel="stylesheet" href="pannellum/build/pannellum.css">
+</head>
+<body>
+  <h1 id="titulo">Carregando...</h1>
+  <div id="panorama" style="width:100%; height:90vh;"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const tourId = urlParams.get('id');
+
+    fetch('data/tours.json')
+      .then(res => res.json())
+      .then(tours => {
+        const tour = tours.find(t => t.id === tourId);
+        if (!tour) return alert("Tour não encontrado!");
+
+        document.getElementById('titulo').textContent = tour.titulo;
+
+        pannellum.viewer('panorama', {
+          "type": "equirectangular",
+          "panorama": tour.imagem,
+          "autoLoad": true,
+          "gyro": true,
+          "orientationOnByDefault": true
+        });
+      });
+  </script>
+</body>
+</html>
