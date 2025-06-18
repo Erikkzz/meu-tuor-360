@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sala",
+    "titulo": "Tour apartamento",
+    "descricao": "imagem 360 do apartamento",
+    "imagem": "scenes/sala.jpg"
+  }
+]
+[
+  {
+    "id": "sala 2",
+    "titulo": "Tour apartamento",
+    "descricao": "imagem 360 do apartamento",
+    "imagem": "scenes/sala 2.jpg"
+  }
+]
+[
+  {
+    "id": "cozinha",
+    "titulo": "Tour apartamento",
+    "descricao": "imagem 360 do apartamento",
+    "imagem": "scenes/cozinha.jpg"
+  }
+]
